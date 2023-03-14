@@ -1,0 +1,85 @@
+@import 'helpers';
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include reset();
+}
+
+select:focus, input:focus, button:focus{
+  outline:none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+background-color: $primary-light;
+// overflow: hidden;
+
+// @include flexDisplay(center, center, column, wrap)
+
+// height: 100vh;
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+section{
+
+  display: flex;
+  flex-direction: column;
+  word-break: break-all;
+  padding: 0 18rem;
+  box-sizing: border-box;
+  
+  &.s1, &.s3{
+    height: 60vh;
+    width: 100vw;
+    background-color: darkblue;
+    color: white;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &.s2{
+    height: auto;
+    width: 100vw;
+    background-color: white;
+    justify-content: flex-start;
+    color: black;
+    padding: 2rem 4rem;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  h1{
+    font-size: 4.618rem;
+  }
+
+  h2{
+    font-size: 2.618rem;
+  }
+
+  h3{
+    font-size: 1.618rem;
+  }
+
+  img{
+    width: 100%;
+  }
+}
+
+.scroll-tracker{
+  height: 0.5rem;
+  background-color: lightblue;
+  position: fixed;
+  inset: 0 0 auto;
+  transform-origin: left;
+}
+
+/* -------- CLASS & ID --------- */
+
+/* -------- ANIMATIONS --------- */
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+  
+}

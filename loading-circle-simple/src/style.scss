@@ -1,0 +1,50 @@
+#wrapper {
+  font-family: Verdana;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: LightSteelBlue;
+  #loader,
+  #logo,
+  .anime {
+    position: absolute;
+  }
+  #loader {
+    top: 50%;
+    left: 50%;
+    #logo,
+    .anime {
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+    }
+    #logo {
+      width: 90px;
+      height: 90px;
+      margin-left: -45px;
+      margin-top: -45px;
+      background-color: rgba(255, 255, 255, 0.05);
+      text-align: center;
+      vertical-align: middle;
+      line-height: 90px;
+    }
+    .anime {
+      width: 100px;
+      height: 100px;
+      margin-left: -50px;
+      margin-top: -50px;
+      border-top: 3px solid SteelBlue;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+@import 'helpers';
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include reset();
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  // background-color: $primary-light;
+  overflow: hidden;
+
+  // @include flexDisplay(center, center, column, wrap)
+
+  // height: 100vh;
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+section {
+  @include flexDisplay(center, center, column, wrap);
+  min-height: 100vh;
+  background: linear-gradient(to bottom, $primary-light, $second-light);
+
+  .color {
+    position: absolute;
+    filter: blur(150px);
+
+    &:nth-child(1) {
+      top: -350px;
+      background: $primary-red;
+      @include width-height(600px, 600px);
+    }
+    &:nth-child(2) {
+      bottom: -150px;
+      left: 100px;
+      background: $primary-yellow;
+      @include width-height(500px, 500px);
+    }
+    &:nth-child(3) {
+      bottom: 50px;
+      right: 100px;
+      background: $primary-blue;
+      @include width-height(300px, 300px);
+    }
+  }
+
+  .box {
+    @include relativeInit_width-height(fit-content, fit-content);
+    background: $first-white-shadow;
+    border-radius: 10px;
+    @include flexDisplay(center, center, column, wrap);
+    // backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid $first-white-shadow;
+    border-bottom: 1px solid $first-white-shadow;
+    box-shadow: 0 25px 45px $first-dark-shadow;
+    z-index: 5;
+    padding: 2rem 4rem;
+
+    .square {
+      position: absolute;
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-right: 1px solid $first-white-shadow;
+      border-bottom: 1px solid $first-white-shadow;
+      box-shadow: 0 25px 45px $first-dark-shadow;
+      background: $first-white-shadow;
+      animation: animateSquare 20s linear infinite;
+      animation-delay: calc(-1s * var(--i));
+      z-index: 0;
+
+      &:nth-child(1) {
+        top: -50px;
+        right: -60px;
+        @include width-height(100px, 100px);
+      }
+      &:nth-child(2) {
+        top: 150px;
+        left: -100px;
+        @include width-height(120px, 120px);
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        bottom: 50px;
+        right: -60px;
+        @include width-height(80px, 80px);
+        z-index: 2;
+      }
+      &:nth-child(4) {
+        bottom: -80px;
+        left: 100px;
+        @include width-height(50px, 50px);
+      }
+      &:nth-child(5) {
+        top: -80px;
+        left: 140px;
+        @include width-height(60px, 60px);
+      }
+    }
+
+    .form {
+      @include relativeInit_width-height(100%, 100%);
+      // padding: 40px;
+
+      h2 {
+        position: relative;
+        color: $white;
+        font-size: 2em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          @include width-height(80px, 4px);
+          background: $white;
+        }
+      }
+
+      .inputBox {
+        width: 100%;
+        margin-top: 20px;
+
+        input {
+          box-sizing: border-box;
+          width: 100%;
+          background: $first-white-shadow;
+          border: none;
+          outline: none;
+          padding: 1em 20px;
+          border-radius: 1em;
+          border: 1px solid rgba(255, 255, 255, 0.5);
+          border-right: 1px solid $first-white-shadow;
+          border-bottom: 1px solid $first-white-shadow;
+          font-size: 1em;
+          letter-spacing: 1px;
+          color: $white;
+          box-shadow: 0 5px 15px $first-dark-shadow;
+
+          &::placeholder {
+            color: $white;
+          }
+
+          &[type='submit'] {
+            background: $white;
+            color: $primary-grey;
+            max-width: 100px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-bottom: 20px;
+          }
+        }
+      }
+
+      .forget {
+        margin-top: 5px;
+        color: $white;
+
+        a {
+          color: $white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+/* -------- CLASS & ID --------- */
+
+/* -------- ANIMATIONS --------- */
+
+@keyframes animateSquare {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+}

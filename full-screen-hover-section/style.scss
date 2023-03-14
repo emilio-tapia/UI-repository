@@ -1,0 +1,118 @@
+@import 'helpers';
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include reset();
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: $primary-light;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: column;
+  max-width: 1000px;
+  place-content: center;
+  padding-inline: 4rem;
+  gap: 4rem;
+  height: inherit;
+  color: white;
+
+  .wrapper {
+    display: grid;
+    gap: 1rem;
+    transition: 0.5s ease-in-out;
+
+    i {
+      opacity: 0;
+      transition: 0.5s ease-in-out;
+      transform: translateY(-100%);
+    }
+    p {
+      opacity: 0.1;
+      transition: 0.5s ease-in-out;
+    }
+  }
+}
+
+i,
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  opacity: 0;
+  transition: 0.5s ease-in;
+  filter: brightness(0.3);
+
+  // &::before {
+  //   content: '';
+  //   background: linear-gradient(45deg, darkblue, green);
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   mix-blend-mode: multiply;
+  //   inset: 0;
+  //   transition: 1s ease-in;
+  // }
+}
+
+.bg {
+  opacity: 0.9;
+}
+
+.wrapper:hover {
+  transform: scale(1.05);
+
+  i,
+  p {
+    opacity: 1;
+  }
+
+  i {
+    transform: translateY(0%);
+  }
+}
+
+.wrapper:hover ~ .image {
+  opacity: 1;
+  z-index: -1;
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+/* -------- CLASS & ID --------- */
+
+/* -------- ANIMATIONS --------- */
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+}

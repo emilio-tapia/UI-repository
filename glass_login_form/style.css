@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+/* GLOBAL CONFIG RESET */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  overflow: hidden;
+}
+
+/* -------- TYPE SELECTORS --------- */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+section .color {
+  position: absolute;
+  filter: blur(150px);
+}
+section .color:nth-child(1) {
+  top: -350px;
+  background: #ff359b;
+  width: 600px;
+  height: 600px;
+}
+section .color:nth-child(2) {
+  bottom: -150px;
+  left: 100px;
+  background: #fffd87;
+  width: 500px;
+  height: 500px;
+}
+section .color:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  background: #00d2ff;
+  width: 300px;
+  height: 300px;
+}
+section .box {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  padding: 2rem 4rem;
+}
+section .box .square {
+  position: absolute;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  animation: animateSquare 20s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+  z-index: 0;
+}
+section .box .square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+section .box .square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 120px;
+  z-index: 2;
+}
+section .box .square:nth-child(3) {
+  bottom: 50px;
+  right: -60px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+section .box .square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+section .box .square:nth-child(5) {
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+section .box .form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+section .box .form h2 {
+  position: relative;
+  color: #fff;
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+section .box .form h2::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: #fff;
+}
+section .box .form .inputBox {
+  width: 100%;
+  margin-top: 20px;
+}
+section .box .form .inputBox input {
+  box-sizing: border-box;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 1em 20px;
+  border-radius: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1em;
+  letter-spacing: 1px;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+section .box .form .inputBox input::-moz-placeholder {
+  color: #fff;
+}
+section .box .form .inputBox input::placeholder {
+  color: #fff;
+}
+section .box .form .inputBox input[type=submit] {
+  background: #fff;
+  color: #777;
+  max-width: 100px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+section .box .form .forget {
+  margin-top: 5px;
+  color: #fff;
+}
+section .box .form .forget a {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* -------- CLASS & ID --------- */
+/* -------- ANIMATIONS --------- */
+@keyframes animateSquare {
+  0% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-30px);
+  }
+}
+/* -------- MEDIA QUERY --------- *//*# sourceMappingURL=style.css.map */

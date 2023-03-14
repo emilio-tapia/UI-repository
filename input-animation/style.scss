@@ -1,0 +1,141 @@
+@import 'helpers';
+
+:root {
+  --first: #1a73e8;
+  --input: #80868b;
+  --border: #dadce0;
+  --border-opacity: rgba(218, 220, 224, 0.503);
+
+  --p: 1rem;
+  --cap1: 0.75rem;
+}
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include reset();
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: var(--p);
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background: linear-gradient(45deg, limegreen, rebeccapurple);
+  margin: 0;
+  padding: 0;
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+h1 {
+  margin: 0;
+}
+
+/* -------- CLASS & ID --------- */
+
+.container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.form {
+  width: 360px;
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+  border-top: 1px solid var(--border-opacity);
+  border-left: 1px solid var(--border-opacity);
+  background: rgba($color: #dadce0, $alpha: 0.2);
+
+  &__title {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+  &__div {
+    position: relative;
+    height: 48px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+
+    &:focus + .form__label {
+      top: 0rem;
+      left: 0.8rem;
+      color: var(--first);
+      font-size: var(--cap1);
+      font-weight: 500;
+      z-index: 10;
+    }
+
+    &:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+      top: 0rem;
+      left: 0.8rem;
+      font-size: var(--cap1);
+      font-weight: 500;
+      z-index: 10;
+    }
+
+    &:focus {
+      border: 1px solid var(--first);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    transform: translate(0%, -50%);
+    left: 1rem;
+    top: 50%;
+    padding: 0 0.25rem;
+    background-color: $primary-light;
+    color: var(--input);
+    transition: 0.3s;
+  }
+
+  &__button {
+    display: block;
+    margin-left: auto;
+    padding: 0.75rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--first);
+    color: $primary-light;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+/* -------- ANIMATIONS --------- */
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+}
