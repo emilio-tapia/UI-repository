@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+/* GLOBAL CONFIG RESET */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vh;
+  color: white;
+}
+
+/* -------- TYPE SELECTORS --------- */
+/* -------- CLASS & ID --------- */
+.userIcon {
+  margin-top: 2rem;
+  width: 100px;
+  height: 100px;
+  background: #d3d9d9;
+  border: 1px solid #d3d9d9;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.userIcon::before {
+  content: "";
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 15px);
+  top: 24px;
+}
+.userIcon::after {
+  content: "";
+  width: 65px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(50% - 32px);
+  top: 63px;
+}
+
+/* -------- ANIMATIONS --------- */
+/* -------- MEDIA QUERY --------- *//*# sourceMappingURL=style.css.map */

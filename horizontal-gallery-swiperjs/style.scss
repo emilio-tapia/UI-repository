@@ -1,0 +1,155 @@
+@use 'helpers' as h;
+
+:root {
+  --first-color: #f7c364;
+  --active-color: #be324c;
+  --transition-duration: 0.5s;
+}
+
+/* GLOBAL CONFIG RESET */
+* {
+  @include h.reset();
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 0 8px black;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: h.$primary-dark;
+  // overflow: hidden;
+
+  // @include flexDisplay(center, center, column, wrap)
+
+  height: 100vh;
+  color: var(--first-color);
+}
+
+.container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-inline: auto;
+
+  height: 100%;
+}
+
+.swiper {
+  &-container {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  &-wrapper {
+    top: 4rem;
+  }
+
+  &-slide {
+    padding: 3rem;
+  }
+
+  &-slide-container {
+    height: 200px;
+    max-width: 100%;
+    transition: var(--transition-duration);
+
+    .details {
+      width: 100%;
+      height: 100%;
+      transition: var(--transition-duration);
+    }
+
+    span {
+      display: block;
+      font-size: 2rem;
+    }
+
+    h1 {
+      display: none;
+      font-size: 4rem;
+      margin-inline: 0.5rem;
+      // margin: .5rem 0;
+    }
+
+    p {
+      display: none;
+      font-family: josefin sans;
+    }
+  }
+
+  &-slide-active {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    .swiper-slide-container {
+      transition: var(--transition-duration);
+      max-width: 100%;
+
+      .details {
+        height: 300px;
+        transition: var(--transition-duration);
+      }
+
+      h1,
+      p {
+        display: block;
+      }
+
+      .title {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  &-pagination {
+    top: 0px !important;
+    height: 3rem;
+  }
+
+  &-pagination-bullet {
+    opacity: 1;
+    background: var(--first-color);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }
+
+  &-pagination-bullet-active {
+    opacity: 1;
+    background: var(--active-color);
+    height: 10px;
+    width: 30px;
+    border-radius: 10%;
+  }
+}
+
+/* -------- TYPE SELECTORS --------- */
+
+/* -------- CLASS & ID --------- */
+
+/* -------- ANIMATIONS --------- */
+
+/* -------- MEDIA QUERY --------- */
+
+@media (max-width: 800px) {
+}

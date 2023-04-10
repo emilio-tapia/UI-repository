@@ -5,28 +5,38 @@
   @include reset();
 }
 
-select:focus, input:focus, button:focus{
-  outline:none;
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
 }
 
 /* -------- BODY DISPLAY --------- */
 body {
-background-image: radial-gradient(#313131 0.5px, transparent 0.5px);
-background-size: 8px 8px;
-background-color: rgba(191,191,197,1);
-background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
-background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, rgba(177,191,199,1) 45%, rgba(164,192,201,1) 77%, rgba(155,192,202,1) 100%));
-overflow: hidden;
+  background-image: radial-gradient(#313131 0.5px, transparent 0.5px);
+  background-size: 8px 8px;
+  background-color: rgba(191, 191, 197, 1);
+  background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
+  background: background-image(
+    linear-gradient(
+      from left top,
+      rgba(191, 191, 197, 1) 10%,
+      rgba(177, 191, 199, 1) 45%,
+      rgba(164, 192, 201, 1) 77%,
+      rgba(155, 192, 202, 1) 100%
+    )
+  );
+  overflow: hidden;
 
-@include flexDisplay(center, center, column, initial);
+  @include flexDisplay(center, center, column, initial);
 
-height: 100vh;
-gap: 0rem;
+  height: 100vh;
+  gap: 0rem;
 }
 
 /* -------- TYPE SELECTORS --------- */
 
-h1{
+h1 {
   text-transform: uppercase;
   width: 85%;
   font-size: 2rem;
@@ -34,7 +44,7 @@ h1{
 
 /* -------- CLASS & ID --------- */
 
-.container{
+.container {
   z-index: 5;
   width: 90%;
   height: 80vh;
@@ -42,27 +52,29 @@ h1{
   overflow: hidden;
   @include flexDisplay(stretch, center, row, nowrap);
   border: 4px solid #222;
-  box-shadow: 
-  2px 2px 1px #222,
-  4px 4px 1px #222,
-  6px 6px 1px #222,
-  8px 8px 1px #222;
+  box-shadow: 2px 2px 1px #222, 4px 4px 1px #222, 6px 6px 1px #222,
+    8px 8px 1px #222;
   // 10px 9px 1px 4px #222;
-  background-color: rgba(191,191,197,1);
-background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
-background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, rgba(177,191,199,1) 45%, rgba(164,192,201,1) 77%, rgba(155,192,202,1) 100%));
+  background-color: rgba(191, 191, 197, 1);
+  background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
+  background: background-image(
+    linear-gradient(
+      from left top,
+      rgba(191, 191, 197, 1) 10%,
+      rgba(177, 191, 199, 1) 45%,
+      rgba(164, 192, 201, 1) 77%,
+      rgba(155, 192, 202, 1) 100%
+    )
+  );
 
-
-
-
-  .img-container{
+  .img-container {
     overflow: hidden;
     position: relative;
     width: 100%;
     transition-duration: 1.5s;
-    transition-timing-function: cubic-bezier(0.93, 1, 0.320, 1);
+    transition-timing-function: cubic-bezier(0.93, 1, 0.32, 1);
 
-    h2{
+    h2 {
       position: absolute;
       text-transform: uppercase;
       font-size: 1.5rem;
@@ -73,27 +85,26 @@ background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, 
       opacity: 0;
       transition-duration: 1.4s;
 
-      span{
+      span {
         font-weight: bold;
         font-size: 2rem;
       }
-      
     }
 
-    &:hover{
+    &:hover {
       width: calc(100% * 10);
       transition-duration: 1s;
 
-      h2{
+      h2 {
         opacity: 1;
       }
 
-      img{
+      img {
         filter: grayscale(0);
       }
     }
 
-    img{
+    img {
       height: 100%;
       width: 100%;
       object-fit: cover;
@@ -101,17 +112,15 @@ background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, 
       filter: grayscale(1);
     }
 
-    &:nth-child(2){
-
-      h2{
+    &:nth-child(2) {
+      h2 {
         bottom: initial;
         top: 10%;
         left: 10%;
       }
     }
-    &:nth-child(3){
-
-      h2{
+    &:nth-child(3) {
+      h2 {
         bottom: initial;
         top: 10%;
         right: 10%;
@@ -119,9 +128,8 @@ background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, 
         text-align: right;
       }
     }
-    &:nth-child(4){
-
-      h2{
+    &:nth-child(4) {
+      h2 {
         right: 10%;
         left: initial;
         text-align: right;
@@ -135,5 +143,4 @@ background: background-image(linear-gradient(left top, rgba(191,191,197,1) 10%, 
 /* -------- MEDIA QUERY --------- */
 
 @media (max-width: 800px) {
-  
 }

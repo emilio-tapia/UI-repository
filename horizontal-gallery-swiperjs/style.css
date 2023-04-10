@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&family=Poppins:wght@100;500;600;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
+:root {
+  --first-color: #f7c364;
+  --active-color: #be324c;
+  --transition-duration: 0.5s;
+}
+
+/* GLOBAL CONFIG RESET */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 0 0 8px black;
+}
+
+/* -------- BODY DISPLAY --------- */
+body {
+  background-color: #222;
+  height: 100vh;
+  color: var(--first-color);
+}
+
+.container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-inline: auto;
+  height: 100%;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+.swiper-wrapper {
+  top: 4rem;
+}
+.swiper-slide {
+  padding: 3rem;
+}
+.swiper-slide-container {
+  height: 200px;
+  max-width: 100%;
+  transition: var(--transition-duration);
+}
+.swiper-slide-container .details {
+  width: 100%;
+  height: 100%;
+  transition: var(--transition-duration);
+}
+.swiper-slide-container span {
+  display: block;
+  font-size: 2rem;
+}
+.swiper-slide-container h1 {
+  display: none;
+  font-size: 4rem;
+  margin-inline: 0.5rem;
+}
+.swiper-slide-container p {
+  display: none;
+  font-family: josefin sans;
+}
+.swiper-slide-active {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.swiper-slide-active .swiper-slide-container {
+  transition: var(--transition-duration);
+  max-width: 100%;
+}
+.swiper-slide-active .swiper-slide-container .details {
+  height: 300px;
+  transition: var(--transition-duration);
+}
+.swiper-slide-active .swiper-slide-container h1,
+.swiper-slide-active .swiper-slide-container p {
+  display: block;
+}
+.swiper-slide-active .swiper-slide-container .title {
+  margin-top: 1.5rem;
+}
+.swiper-pagination {
+  top: 0px !important;
+  height: 3rem;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  background: var(--first-color);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--active-color);
+  height: 10px;
+  width: 30px;
+  border-radius: 10%;
+}
+
+/* -------- TYPE SELECTORS --------- */
+/* -------- CLASS & ID --------- */
+/* -------- ANIMATIONS --------- */
+/* -------- MEDIA QUERY --------- *//*# sourceMappingURL=style.css.map */

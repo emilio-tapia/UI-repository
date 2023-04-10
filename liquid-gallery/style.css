@@ -8,7 +8,9 @@
   font-family: "Poppins", sans-serif;
 }
 
-select:focus, input:focus, button:focus {
+select:focus,
+input:focus,
+button:focus {
   outline: none;
 }
 
@@ -18,7 +20,7 @@ body {
   background-size: 8px 8px;
   background-color: rgb(191, 191, 197);
   background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
-  background: background-image(linear-gradient(left top, rgb(191, 191, 197) 10%, rgb(177, 191, 199) 45%, rgb(164, 192, 201) 77%, rgb(155, 192, 202) 100%));
+  background: background-image(linear-gradient(from left top, rgb(191, 191, 197) 10%, rgb(177, 191, 199) 45%, rgb(164, 192, 201) 77%, rgb(155, 192, 202) 100%));
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -52,7 +54,7 @@ h1 {
   box-shadow: 2px 2px 1px #222, 4px 4px 1px #222, 6px 6px 1px #222, 8px 8px 1px #222;
   background-color: rgb(191, 191, 197);
   background: filter-gradient(#bfbfc5, #b1bfc7, horizontal);
-  background: background-image(linear-gradient(left top, rgb(191, 191, 197) 10%, rgb(177, 191, 199) 45%, rgb(164, 192, 201) 77%, rgb(155, 192, 202) 100%));
+  background: background-image(linear-gradient(from left top, rgb(191, 191, 197) 10%, rgb(177, 191, 199) 45%, rgb(164, 192, 201) 77%, rgb(155, 192, 202) 100%));
 }
 .container .img-container {
   overflow: hidden;
